@@ -9,3 +9,8 @@ static const NSTimeInterval ConditionalExecuteBlockTimeout = 2.0;
 typedef BOOL (^ConditionalTestBlock)();
 typedef void (^ExecuteBlock)();
 typedef ExecuteBlock (^ConditionalExecuteBlock)(ConditionalTestBlock tester, ExecuteBlock exec, id next);
+
+// Chaining methods
+void conditionallyChain(ExecuteBlock first);
+ExecuteBlock conditionallyNext(ConditionalTestBlock tester, ExecuteBlock exec, ExecuteBlock next);
+ExecuteBlock conditionally(ConditionalTestBlock tester, ExecuteBlock exec);
