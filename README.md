@@ -10,12 +10,12 @@ Objective-C conditionally chaining and execution, mainly useful for testing
       // Perform some action
 
   }, conditionallyNext(^BOOL() {
-      return someLocalBooleanVariable;
+      return someOtherVariableAlteredByLastAction == someOtherResult;
   }, ^{
       // Perform further action
 
   }, conditionally(^BOOL() {
-      return [SomeClass sharedInstance].someVariable == someOtherResult;
+      return [SomeClass sharedInstance].someVariable == someFinalResult;
   }, ^{
       // Perform final action
 
